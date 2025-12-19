@@ -1,0 +1,89 @@
+nohup: ignoring input
+评测GENRE: classical
+数据集路径：/data7/fwh/benchdata/suno_score/classical
+2025-11-23T04:02:42 (svs.sh:216:main) ./svs.sh --lang zh --local_data_opts --stage 0 --feats_type raw --pitch_extract dio --ying_extract None --fs 24000 --fmax 22050 --fmin 0 --n_fft 2048 --n_shift 300 --win_length 1200 --token_type phn --g2p None --cleaner none --train_config conf/train.yaml --inference_config conf/decode.yaml --inference_tag  --train_set test --valid_set test --test_sets test --score_feats_extract syllable_score_feats --srctexts data/test/text --svs_exp  --audio_format wav --fs 44100 --n_shift 512 --win_length 2048 --stage 1 --stop_stage 4
+2025-11-23T04:02:42 (svs.sh:317:main) Stage 1: Data preparation for data/test, data/test, etc.
+2025-11-23T04:02:43 (data.sh:22:main) local/data.sh --stage 0 --fs 44100 --g2p None
+2025-11-23T04:02:43 (data.sh:37:main) stage 0: Data Download
+2025-11-23T04:02:43 (data.sh:42:main) stage 1: Data preparaion 
+fix_data_dir.sh: kept all 265 utterances.
+fix_data_dir.sh: old files are kept in data/test/.backup
+2025-11-23T04:02:49 (svs.sh:333:main) Stage 2: Format wav.scp: data/ -> dump/raw/
+utils/copy_data_dir.sh: copied data from data/test to dump/raw/org/test
+utils/validate_data_dir.sh: WARNING: you have only one speaker.  This probably a bad idea.
+   Search for the word 'bold' in http://kaldi-asr.org/doc/data_prep.html
+   for more information.
+utils/validate_data_dir.sh: Successfully validated data-directory dump/raw/org/test
+fix_data_dir.sh: kept all 265 utterances.
+fix_data_dir.sh: old files are kept in dump/raw/org/test/.backup
+2025-11-23T04:02:49 (format_wav_scp.sh:46:main) scripts/audio/format_wav_scp.sh --nj 4 --cmd run.pl --audio-format wav --fs 44100 data/test/wav.scp dump/raw/org/test
+2025-11-23T04:02:50 (format_wav_scp.sh:118:main) [info]: without segments
+2025-11-23T04:02:51 (format_wav_scp.sh:153:main) Successfully finished. [elapsed=2s]
+2025-11-23T04:02:51 (format_score_scp.sh:33:main) scripts/audio/format_score_scp.sh --nj 4 --cmd run.pl data/test/score.scp dump/raw/org/test
+2025-11-23T04:02:51 (format_score_scp.sh:92:main) [info]: without segments
+2025-11-23T04:02:52 (format_score_scp.sh:116:main) Successfully finished. [elapsed=1s]
+utils/copy_data_dir.sh: copied data from data/test to dump/raw/org/test
+utils/validate_data_dir.sh: WARNING: you have only one speaker.  This probably a bad idea.
+   Search for the word 'bold' in http://kaldi-asr.org/doc/data_prep.html
+   for more information.
+utils/validate_data_dir.sh: Successfully validated data-directory dump/raw/org/test
+fix_data_dir.sh: kept all 265 utterances.
+fix_data_dir.sh: old files are kept in dump/raw/org/test/.backup
+2025-11-23T04:02:52 (format_wav_scp.sh:46:main) scripts/audio/format_wav_scp.sh --nj 4 --cmd run.pl --audio-format wav --fs 44100 data/test/wav.scp dump/raw/org/test
+2025-11-23T04:02:52 (format_wav_scp.sh:118:main) [info]: without segments
+2025-11-23T04:02:53 (format_wav_scp.sh:153:main) Successfully finished. [elapsed=1s]
+2025-11-23T04:02:53 (format_score_scp.sh:33:main) scripts/audio/format_score_scp.sh --nj 4 --cmd run.pl data/test/score.scp dump/raw/org/test
+2025-11-23T04:02:54 (format_score_scp.sh:92:main) [info]: without segments
+2025-11-23T04:02:54 (format_score_scp.sh:116:main) Successfully finished. [elapsed=1s]
+utils/copy_data_dir.sh: copied data from data/test to dump/raw/org/test
+utils/validate_data_dir.sh: WARNING: you have only one speaker.  This probably a bad idea.
+   Search for the word 'bold' in http://kaldi-asr.org/doc/data_prep.html
+   for more information.
+utils/validate_data_dir.sh: Successfully validated data-directory dump/raw/org/test
+fix_data_dir.sh: kept all 265 utterances.
+fix_data_dir.sh: old files are kept in dump/raw/org/test/.backup
+2025-11-23T04:02:54 (format_wav_scp.sh:46:main) scripts/audio/format_wav_scp.sh --nj 4 --cmd run.pl --audio-format wav --fs 44100 data/test/wav.scp dump/raw/org/test
+2025-11-23T04:02:55 (format_wav_scp.sh:118:main) [info]: without segments
+2025-11-23T04:02:56 (format_wav_scp.sh:153:main) Successfully finished. [elapsed=2s]
+2025-11-23T04:02:56 (format_score_scp.sh:33:main) scripts/audio/format_score_scp.sh --nj 4 --cmd run.pl data/test/score.scp dump/raw/org/test
+2025-11-23T04:02:56 (format_score_scp.sh:92:main) [info]: without segments
+2025-11-23T04:02:57 (format_score_scp.sh:116:main) Successfully finished. [elapsed=1s]
+2025-11-23T04:02:57 (svs.sh:427:main) Stage 3: Remove long/short data: dump/raw/org -> dump/raw
+utils/copy_data_dir.sh: copied data from dump/raw/org/test to dump/raw/test
+utils/validate_data_dir.sh: WARNING: you have only one speaker.  This probably a bad idea.
+   Search for the word 'bold' in http://kaldi-asr.org/doc/data_prep.html
+   for more information.
+utils/validate_data_dir.sh: Successfully validated data-directory dump/raw/test
+fix_data_dir.sh: kept all 265 utterances.
+fix_data_dir.sh: old files are kept in dump/raw/test/.backup
+utils/copy_data_dir.sh: copied data from dump/raw/org/test to dump/raw/test
+utils/validate_data_dir.sh: WARNING: you have only one speaker.  This probably a bad idea.
+   Search for the word 'bold' in http://kaldi-asr.org/doc/data_prep.html
+   for more information.
+utils/validate_data_dir.sh: Successfully validated data-directory dump/raw/test
+fix_data_dir.sh: kept all 265 utterances.
+fix_data_dir.sh: old files are kept in dump/raw/test/.backup
+2025-11-23T04:02:58 (svs.sh:465:main) Stage 4: Generate token_list from data/test/text
+/data7/fwh/espnet/tools/miniconda/envs/espnet/bin/python3 /data7/fwh/espnet/tools/miniconda/envs/espnet/lib/python3.10/site-packages/espnet2/bin/tokenize_text.py --token_type phn -f 2- --input dump/raw/srctexts --output data/token_list/phn_None_zh/tokens.txt --non_linguistic_symbols none --cleaner none --g2p None --write_vocabulary true --add_symbol '<blank>:0' --add_symbol '<unk>:1' --add_symbol '<sos/eos>:-1'
+2025-11-23 04:03:00,971 (tokenize_text:173) INFO: OOV rate = 0.0 %
+2025-11-23T04:03:01 (svs.sh:1241:main) Skip the packing stage
+2025-11-23T04:03:01 (svs.sh:1298:main) Skip the uploading to HuggingFace stage
+2025-11-23T04:03:01 (svs.sh:1301:main) Successfully finished. [elapsed=19s]
+RNN
+2025-11-23T04:03:01 (svs.sh:216:main) ./svs.sh --lang zh --local_data_opts --stage 0 --feats_type raw --pitch_extract dio --ying_extract None --fs 24000 --fmax 22050 --fmin 0 --n_fft 2048 --n_shift 300 --win_length 1200 --token_type phn --g2p None --cleaner none --train_config conf/train.yaml --inference_config conf/decode.yaml --inference_tag  --train_set test --valid_set test --test_sets test --score_feats_extract syllable_score_feats --srctexts data/test/text --svs_exp  --audio_format wav --stage 7 --stop_stage 7 --fs 44100 --n_fft 2048 --n_shift 512 --win_length 2048 --svs_task svs --pitch_extract dio --feats_extract fbank --feats_normalize none --score_feats_extract syllable_score_feats --inference_config conf/tuning/decode_vits.yaml --inference_model valid.loss.ave_2best.pth --write_collected_feats true --inference_nj 1 --vocoder_file /data7/fwh/vocoder/train_nodev_opencpop_hifigan.v1/checkpoint-250000steps.pkl --svs_exp checkpoints/opencpop_naive_rnn_dp/exp/svs_train_naive_rnn_dp_raw_phn_None_zh --inference_tag suno_classical
+2025-11-23T04:03:01 (svs.sh:914:main) Stage 7: Decoding: training_dir=checkpoints/opencpop_naive_rnn_dp/exp/svs_train_naive_rnn_dp_raw_phn_None_zh
+使用GPU推理
+2025-11-23T04:03:01 (svs.sh:956:main) Generate 'checkpoints/opencpop_naive_rnn_dp/exp/svs_train_naive_rnn_dp_raw_phn_None_zh/suno_classical/run.sh'. You can resume the process from stage 7 using this script
+2025-11-23T04:03:01 (svs.sh:1011:main) Decoding started... log: 'checkpoints/opencpop_naive_rnn_dp/exp/svs_train_naive_rnn_dp_raw_phn_None_zh/suno_classical/test/log/svs_inference.*.log'
+2025-11-23T04:04:21 (svs.sh:1241:main) Skip the packing stage
+2025-11-23T04:04:21 (svs.sh:1298:main) Skip the uploading to HuggingFace stage
+2025-11-23T04:04:21 (svs.sh:1301:main) Successfully finished. [elapsed=80s]
+Xiaoice
+2025-11-23T04:04:21 (svs.sh:216:main) ./svs.sh --lang zh --local_data_opts --stage 0 --feats_type raw --pitch_extract dio --ying_extract None --fs 24000 --fmax 22050 --fmin 0 --n_fft 2048 --n_shift 300 --win_length 1200 --token_type phn --g2p None --cleaner none --train_config conf/train.yaml --inference_config conf/decode.yaml --inference_tag  --train_set test --valid_set test --test_sets test --score_feats_extract syllable_score_feats --srctexts data/test/text --svs_exp  --audio_format wav --stage 7 --stop_stage 7 --fs 44100 --n_fft 2048 --n_shift 512 --win_length 2048 --svs_task svs --pitch_extract dio --feats_extract fbank --feats_normalize none --score_feats_extract syllable_score_feats --inference_config conf/tuning/decode_vits.yaml --inference_model 470epoch.pth --write_collected_feats true --inference_nj 1 --vocoder_file /data7/fwh/vocoder/train_nodev_opencpop_hifigan.v1/checkpoint-250000steps.pkl --svs_exp checkpoints/opencpop_xiaoice/exp/svs_train_xiaoice_raw_phn_None_zh --inference_tag suno_classical
+2025-11-23T04:04:22 (svs.sh:914:main) Stage 7: Decoding: training_dir=checkpoints/opencpop_xiaoice/exp/svs_train_xiaoice_raw_phn_None_zh
+使用GPU推理
+2025-11-23T04:04:22 (svs.sh:956:main) Generate 'checkpoints/opencpop_xiaoice/exp/svs_train_xiaoice_raw_phn_None_zh/suno_classical/run.sh'. You can resume the process from stage 7 using this script
+2025-11-23T04:04:22 (svs.sh:1011:main) Decoding started... log: 'checkpoints/opencpop_xiaoice/exp/svs_train_xiaoice_raw_phn_None_zh/suno_classical/test/log/svs_inference.*.log'
+2025-11-23T04:05:34 (svs.sh:1241:main) Skip the packing stage
+2025-11-23T04:05:34 (svs.sh:1298:main) Skip the uploading to HuggingFace stage
+2025-11-23T04:05:34 (svs.sh:1301:main) Successfully finished. [elapsed=73s]

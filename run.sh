@@ -32,10 +32,15 @@ score_feats_extract=syllable_score_feats   # frame_score_feats | syllable_score_
 
 opts="--audio_format wav "
 
-train_set=tr_no_dev
-valid_set=dev
+
+train_set=test
+valid_set=test
 # test_sets="dev test"
 test_sets="test" # 直接测试test
+
+# train_set=opencpop
+# valid_set=opencpop
+# test_sets="opencpop"
 
 # training and inference configuration
 train_config=conf/train.yaml
@@ -49,6 +54,7 @@ cleaner=none
 pitch_extract=dio
 ying_extract=None
 
+# 这里指定了训练集
 ./svs.sh \
     --lang zh \
     --local_data_opts "--stage 0" \
@@ -74,3 +80,26 @@ ying_extract=None
     --srctexts "data/${train_set}/text" \
     --svs_exp "${svs_exp}" \
     ${opts} "$@"
+
+# 只有test数据集
+# ./svs.sh \
+#     --lang zh \
+#     --local_data_opts "--stage 0" \
+#     --feats_type raw \
+#     --pitch_extract "${pitch_extract}" \
+#     --ying_extract "${ying_extract}" \
+#     --fs "${fs}" \
+#     --fmax "${fmax}" \
+#     --fmin "${fmin}" \
+#     --n_fft "${n_fft}" \
+#     --n_shift "${n_shift}" \
+#     --win_length "${win_length}" \
+#     --token_type phn \
+#     --g2p ${g2p} \
+#     --cleaner ${cleaner} \
+#     --inference_config "${inference_config}" \
+#     --inference_tag "${inference_tag}" \
+#     --test_sets "${test_sets}" \
+#     --score_feats_extract "${score_feats_extract}" \
+#     --svs_exp "${svs_exp}" \
+#     ${opts} "$@"

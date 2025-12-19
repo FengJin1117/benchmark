@@ -1,30 +1,24 @@
 #!/bin/bash
-# 请输入genre：
-GENRE="pop"
-echo "评测GENRE: ${GENRE}"
+echo "评测opencpop"
 
 # 设置GPU
 export CUDA_VISIBLE_DEVICES=2
 # 0.设置数据集
 DIR="$(cd "$(dirname "$0")" && pwd)"
-NEW_PATH="/data7/fwh/benchdata/suno_score_fix/${GENRE}"
+NEW_PATH="/data7/fwh/data/opencpop_test_stars"
 sed -i "s|^OPENCPOP=.*|OPENCPOP=\"$NEW_PATH\"|" "$DIR/db.sh"
 echo "数据集路径：${NEW_PATH}"
-DATA_SOURCE="fix_suno_${GENRE}"
-
-
-# TODO: 参数过多，可以使用配置的方法
-# 能否转成py文件？问题是反复注释太麻烦
+DATA_SOURCE="fix_opencpop_stars"
 
 # 1.数据准备
-./run.sh \
-    --fs 44100 \
-    --n_shift 512 \
-    --win_length 2048 \
-    --stage 1 \
-    --stop_stage 4 \
+# ./run.sh \
+#     --fs 44100 \
+#     --n_shift 512 \
+#     --win_length 2048 \
+#     --stage 1 \
+#     --stop_stage 4 \
 
-# 2. 模型推理
+# # 2. 模型推理
 echo "RNN"
 ./run.sh \
     --stage 7 \
@@ -109,4 +103,4 @@ echo "VISinger2"
     --inference_tag "${DATA_SOURCE}"
 
 
-# echo "音频推理完毕"
+echo "音频推理完毕"
