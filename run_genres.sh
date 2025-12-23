@@ -1,11 +1,14 @@
 #!/bin/bash
 
+# TODO: 解决问题，解决子集。
+
 # ===== 需要评测的 genre =====
 genres=(
-  classical  
+    # blues
+#   classical  
 #   country  
 #   electronic  
-#   jazz  
+  jazz  
 #   rap
 #   rnb
 #   rock  
@@ -15,11 +18,11 @@ genres=(
 # ===== 可用 GPU =====
 gpus=(
   0
-  1
-  4
-  5
-  6
-  7
+#   1
+#   4
+#   5
+#   6
+#   7
 )
 
 num_gpus=${#gpus[@]}

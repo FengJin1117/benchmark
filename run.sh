@@ -6,7 +6,7 @@ set -u
 set -o pipefail
 
 # spectrogram-related arguments
-fs=24000 # 24000 or 441000
+fs=44100 # 24000 or 44100
 fmin=
 fmax=
 n_fft=
@@ -53,6 +53,7 @@ cleaner=none
 
 pitch_extract=dio
 ying_extract=None
+feats_extract=fbank
 
 # 这里指定了训练集
 ./svs.sh \
@@ -61,6 +62,7 @@ ying_extract=None
     --feats_type raw \
     --pitch_extract "${pitch_extract}" \
     --ying_extract "${ying_extract}" \
+    --feats_extract "${}" feats_extract
     --fs "${fs}" \
     --fmax "${fmax}" \
     --fmin "${fmin}" \

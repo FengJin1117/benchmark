@@ -213,7 +213,7 @@ Options:
 EOF
 )
 
-log "$0 $*"
+# log "$0 $*"
 # Save command line args for logging (they will be lost after utils/parse_options.sh)
 run_args=$(scripts/utils/print_args.sh $0 "$@")
 . utils/parse_options.sh

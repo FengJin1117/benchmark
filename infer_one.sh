@@ -1,5 +1,5 @@
 #!/bin/bash
-# 职责：只负责一个 genre + 一个 GPU
+# 单一职责：只负责一个 genre + 一个 GPU
 set -e
 
 GENRE=$1
@@ -37,45 +37,45 @@ DATA_SOURCE="fix_suno_${GENRE}"
 # 2. 模型推理
 # ======================
 
-echo "[MODEL] VISinger"
-./run.sh \
-  --stage 7 \
-  --stop_stage 7 \
-  --fs 44100 \
-  --n_fft 2048 \
-  --n_shift 512 \
-  --win_length 2048 \
-  --svs_task gan_svs \
-  --pitch_extract dio \
-  --feats_extract fbank \
-  --feats_normalize none \
-  --score_feats_extract syllable_score_feats \
-  --inference_config conf/tuning/decode_vits.yaml \
-  --inference_model 500epoch.pth \
-  --write_collected_feats true \
-  --inference_nj 3 \
-  --svs_exp checkpoints/opencpop_visinger/exp/svs_visinger_normal \
-  --inference_tag "${DATA_SOURCE}"
+# echo "[MODEL] VISinger"
+# ./run.sh \
+#   --stage 7 \
+#   --stop_stage 7 \
+#   --fs 44100 \
+#   --n_fft 2048 \
+#   --n_shift 512 \
+#   --win_length 2048 \
+#   --svs_task gan_svs \
+#   --pitch_extract dio \
+#   --feats_extract fbank \
+#   --feats_normalize none \
+#   --score_feats_extract syllable_score_feats \
+#   --inference_config conf/tuning/decode_vits.yaml \
+#   --inference_model 500epoch.pth \
+#   --write_collected_feats true \
+#   --inference_nj 3 \
+#   --svs_exp checkpoints/opencpop_visinger/exp/svs_visinger_normal \
+#   --inference_tag "${DATA_SOURCE}"
 
-echo "[MODEL] VISinger2"
-./run.sh \
-  --stage 7 \
-  --stop_stage 7 \
-  --fs 44100 \
-  --n_fft 2048 \
-  --n_shift 512 \
-  --win_length 2048 \
-  --svs_task gan_svs \
-  --pitch_extract dio \
-  --feats_extract fbank \
-  --feats_normalize none \
-  --score_feats_extract syllable_score_feats \
-  --inference_config conf/tuning/decode_vits.yaml \
-  --inference_model 500epoch.pth \
-  --write_collected_feats true \
-  --inference_nj 3 \
-  --svs_exp checkpoints/opencpop_visinger2/exp/svs_visinger2_normal \
-  --inference_tag "${DATA_SOURCE}"
+# echo "[MODEL] VISinger2"
+# ./run.sh \
+#   --stage 7 \
+#   --stop_stage 7 \
+#   --fs 44100 \
+#   --n_fft 2048 \
+#   --n_shift 512 \
+#   --win_length 2048 \
+#   --svs_task gan_svs \
+#   --pitch_extract dio \
+#   --feats_extract fbank \
+#   --feats_normalize none \
+#   --score_feats_extract syllable_score_feats \
+#   --inference_config conf/tuning/decode_vits.yaml \
+#   --inference_model 500epoch.pth \
+#   --write_collected_feats true \
+#   --inference_nj 3 \
+#   --svs_exp checkpoints/opencpop_visinger2/exp/svs_visinger2_normal \
+#   --inference_tag "${DATA_SOURCE}"
 
 
 echo "[MODEL] RNN"
